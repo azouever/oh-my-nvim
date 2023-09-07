@@ -33,7 +33,7 @@ local function set_keymap()
 	]])
 
 	-- hop
-	map("n", "<leader><leader>f", ":HopAnywhere<CR>", option)
+	map("n", "<leader><leader>f", ":HopWordMW<CR>", option)
 
 	-- Supported by bufferline
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
