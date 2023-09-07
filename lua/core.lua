@@ -32,6 +32,11 @@ local function set_keymap()
 	cnoreabbrev bwipeout! Bwipeout!
 	]])
 
+	-- hop
+	map("n", "<leader><leader>f", ":HopAnywhere<CR>", option)
+
+	-- Supported by bufferline
+	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
 	-- Supported by bufferline
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
 
