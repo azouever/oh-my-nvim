@@ -32,6 +32,7 @@ vim.opt.showbreak = "↪" -- character to show when line is broken
 
 -- Sidebar
 vim.opt.number = true -- line number on the left
+vim.opt.relativenumber = true -- relative line number
 vim.opt.numberwidth = 3 -- always reserve 3 spaces for line number
 vim.opt.signcolumn = "yes" -- keep 1 column for coc.vim  check
 vim.opt.modelines = 0
