@@ -16,8 +16,10 @@ local function set_keymap()
 	-- add blank line above
 	map("n","<A-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", option)
 
+	map("i", "jk", "<Escape>", option)
+    map("i", "kj", "<Escape>", option)
 
-	map("n", keys.jump_left_window, "<C-W>h", option)
+    map("n", keys.jump_left_window, "<C-W>h", option)
 	map("n", keys.jump_down_window, "<C-W>j", option)
 	map("n", keys.jump_up_window, "<C-W>k", option)
 	map("n", keys.jump_right_window, "<C-W>l", option)
