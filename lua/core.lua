@@ -12,9 +12,9 @@ local function set_keymap()
 	map("n",";k", "m`:silent -g/\\m^\\s*$/d<CR>``:noh<CR>", option)
 
 	-- add blank line below
-	map("n","<A-j>", ":set paste<CR>m`o<Esc>``:set nopaste<CR>", option)
+	map("n",",j", ":set paste<CR>m`o<Esc>``:set nopaste<CR>", option)
 	-- add blank line above
-	map("n","<A-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", option)
+	map("n",",k", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", option)
 
 	map("i", "jk", "<Escape>", option)
     map("i", "kj", "<Escape>", option)
