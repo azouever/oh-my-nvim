@@ -36,3 +36,11 @@ require("lazy").setup({
 -- Final settings
 require("core")
 pcall(require, "custom")
+
+-- highlight yanked text for 200ms using the "Visual" highlight group
+vim.cmd[[
+augroup highlight_yank
+autocmd!
+au TextYankPost * silent! lua vim.highlight.on_yank({timeout=200})
+augroup END
+]]

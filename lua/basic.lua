@@ -1,5 +1,4 @@
 HOME = os.getenv("HOME")
-print(HOME)
 
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
