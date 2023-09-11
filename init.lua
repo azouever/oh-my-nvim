@@ -37,6 +37,8 @@ require("lazy").setup({
 require("core")
 pcall(require, "custom")
 
+-- from https://www.reddit.com/r/neovim/comments/suy5j7/highlight_yanked_text/
+-- :h vim.highlight.on_yank
 -- highlight yanked text for 200ms using the "Visual" highlight group
 vim.cmd[[
 augroup highlight_yank
