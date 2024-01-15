@@ -46,3 +46,7 @@ autocmd!
 au TextYankPost * silent! lua vim.highlight.on_yank({timeout=200})
 augroup END
 ]]
+
+
+vim.cmd([[highlight Visual guifg=#000000 guibg=#FFFFFF gui=none]])
+
