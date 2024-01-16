@@ -14,7 +14,6 @@ return {
 	-- View other usage of the plugin: https://github.com/akinsho/bufferline.nvim
 	-- Use the shortcut to pick a buffer tab.
 	pick_tab = "<leader>tt",
-
 	-- View other usage of the plugin: https://github.com/nvim-neo-tree/neo-tree.nvim
 	-- Use the shortcut to open or close file explorer.
 	file_explorer = "<F9>",
@@ -27,8 +26,8 @@ return {
 
 	-- View other usage of the plugin: https://github.com/akinsho/toggleterm.nvim
 	-- Use the shortcut to open or close the terminal.
-    -- terminal_float = "", -- open terminal in a float window
-	terminal_bottom = "<C-t>", -- open terminal at the bottom
+    terminal_float = "<C-t>", -- open terminal in a float window
+	--terminal_bottom = "<C-t>", -- open terminal at the bottom
 
 	-- View other usage of the plugin: https://github.com/Shatur/neovim-session-manager
 	-- Use the shortcut to switch a session.
@@ -51,10 +50,10 @@ return {
 
 	-- View other usage of the plugin: https://github.com/mrjones2014/smart-splits.nvim
 	-- Use the shortcut to resize the window, <control + alt + hjkl>
-	resize_left = "<C-A-h>",
-	resize_down = "<C-A-j>",
-	resize_up = "<C-A-k>",
-	resize_right = "<C-A-l>",
+	resize_left = "<leader>h",
+	resize_down = "<leader>j",
+	resize_up = "<leader>k",
+	resize_right = "<leader>l",
 
 	-- View other usage of the plugin: https://github.com/neovim/nvim-lspconfig
 	-- Goto

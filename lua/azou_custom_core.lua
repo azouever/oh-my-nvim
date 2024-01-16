@@ -19,6 +19,9 @@ local function set_keymap()
 	map("i", "jk", "<Escape>", option)
     map("i", "kj", "<Escape>", option)
 
+	-- zen-mode
+    map("n", "<leader>z", ":ZenMode<CR>", option)
+
 end
 
 

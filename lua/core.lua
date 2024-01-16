@@ -5,7 +5,6 @@ local opts = require("custom_opts")
 local function set_keymap()
 	local map = vim.keymap.set
 	local option = { noremap = true, silent = true }
-
     map("n", keys.jump_left_window, "<C-W>h", option)
 	map("n", keys.jump_down_window, "<C-W>j", option)
 	map("n", keys.jump_up_window, "<C-W>k", option)
@@ -63,12 +62,12 @@ local function set_keymap()
 				term:change_dir(cwd)
 			end
 			-- when float term opened, disable bottom terminal
-			vim.api.nvim_del_keymap("t", keys.terminal_bottom)
-			vim.cmd("startinsert!")
+			--vim.api.nvim_del_keymap("t", keys.terminal_bottom)
+			--vim.cmd("startinsert!")
 		end,
 		on_close = function(t, job, exit_code, name)
 			-- when float term closed, enable bottom terminal
-			map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
+			--map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
 		end,
 	})
 	function _float_term_toggle()
@@ -126,10 +125,10 @@ local function set_keymap()
 		bottom_terminal_default:toggle()
 	end
 
-	--map("n", keys.terminal_float, ":lua _float_term_toggle()<CR>", option)
-	--map("t", keys.terminal_float, "<C-\\><C-n>:lua _float_term_toggle()<CR>", option)
-	map("n", keys.terminal_bottom, ":lua _bottom_term_toggle()<CR>", option)
-	map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
+	map("n", keys.terminal_float, ":lua _float_term_toggle()<CR>", option)
+	map("t", keys.terminal_float, "<C-\\><C-n>:lua _float_term_toggle()<CR>", option)
+	--map("n", keys.terminal_bottom, ":lua _bottom_term_toggle()<CR>", option)
+	--map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
 
 	vim.cmd([[
     command! Termfloat :lua _float_term_toggle()
@@ -139,6 +138,17 @@ local function set_keymap()
 	-- Supported by nvim-session-manager
 	map("n", keys.switch_session, ":SessionManager load_session<CR>", option)
 end
+
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ direction = "float",cmd = "lazygit",size = kk, hidden = true })
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", " g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+
+
 
 -- Set up transparency
 local function set_transparency()
