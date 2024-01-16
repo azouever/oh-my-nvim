@@ -5,8 +5,7 @@ require("basic")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
-		"git",
-		"clone",
+		"git", "clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
 		"--branch=stable", -- latest stable release
@@ -33,8 +32,11 @@ require("lazy").setup({
 	},
 })
 
+
 -- Final settings
 require("core")
+require("azou_custom_core")
+
 pcall(require, "custom")
 
 -- from https://www.reddit.com/r/neovim/comments/suy5j7/highlight_yanked_text/

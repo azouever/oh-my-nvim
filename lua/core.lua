@@ -6,19 +6,6 @@ local function set_keymap()
 	local map = vim.keymap.set
 	local option = { noremap = true, silent = true }
 
-	-- clean line below
-	map("n",";j", "m`:silent +g/\\m^\\s*$/d<CR>``:noh<CR>", option)
-	-- clean line above
-	map("n",";k", "m`:silent -g/\\m^\\s*$/d<CR>``:noh<CR>", option)
-
-	-- add blank line below
-	map("n",",j", ":set paste<CR>m`o<Esc>``:set nopaste<CR>", option)
-	-- add blank line above
-	map("n",",k", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", option)
-
-	map("i", "jk", "<Escape>", option)
-    map("i", "kj", "<Escape>", option)
-
     map("n", keys.jump_left_window, "<C-W>h", option)
 	map("n", keys.jump_down_window, "<C-W>j", option)
 	map("n", keys.jump_up_window, "<C-W>k", option)
@@ -46,7 +33,7 @@ local function set_keymap()
 	]])
 
 	-- hop
-	map("n", "<leader><leader>f", ":HopWordMW<CR>", option)
+	map("n", "<leader>f", ":HopChar1<CR>", option)
 
 	-- Supported by bufferline
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
