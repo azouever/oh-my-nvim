@@ -35,20 +35,6 @@ return {
 				["rust_analyzer"] = function()
 					require("rust-tools").setup({})
 				end,
-				["lua_ls"] = function()
-					require("lspconfig").lua_ls.setup({
-						on_attach = on_attach,
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								diagnostics = {
-									-- Get the language server to recognize the `vim` global
-									globals = { "vim" },
-								},
-							},
-						},
-					})
-				end,
 			})
 		end,
 	},
