@@ -19,10 +19,9 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "rust_analyzer", "gopls"},
+				ensure_installed = { "lua_ls", "rust_analyzer", "gopls" },
 				automatic_installation = true,
 			})
-			local lspconfig = require("lspconfig")
 			require("mason-lspconfig").setup_handlers({
 				-- The first entry (without a key) will be the default handler
 				-- and will be called for each installed server that doesn't have
@@ -34,6 +33,18 @@ return {
 				-- For example, a handler override for the `rust_analyzer`:
 				["rust_analyzer"] = function()
 					require("rust-tools").setup({})
+				end,
+				["lua_ls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.lua_ls.setup({
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim" },
+								},
+							},
+						},
+					})
 				end,
 			})
 		end,
