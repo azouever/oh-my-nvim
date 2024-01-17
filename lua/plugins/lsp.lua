@@ -19,7 +19,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "rust_analyzer", "gopls", "jsonls" },
+				ensure_installed = { "lua_ls", "rust_analyzer", "gopls"},
 				automatic_installation = true,
 			})
 			local lspconfig = require("lspconfig")
