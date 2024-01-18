@@ -47,6 +47,13 @@ return {
 				persist_size = true,
 				persist_mode = true,
 				autochdir = true,
+				shade_terminals = true,
+				shading_factor = 1,
+				start_in_insert = true,
+				insert_mappings = true,
+				close_on_exit = true,
+				shell = vim.o.shell,
+
 			})
 		end,
 	},
