@@ -20,6 +20,12 @@ local function set_keymap()
 
 	-- zen-mode
 	map("n", "<leader>z", ":ZenMode<CR>", option)
+
+	-- communite with system clipboard
+	vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true })
+	vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true })
+	vim.api.nvim_set_keymap("n", "<Leader>Y", '"+Y', { noremap = true })
+	vim.api.nvim_set_keymap("n", "<Leader>P", '"+P', { noremap = true })
 end
 
 local function set_custom_opt()
