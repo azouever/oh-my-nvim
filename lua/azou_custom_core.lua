@@ -26,6 +26,17 @@ local function set_keymap()
 	vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true })
 	vim.api.nvim_set_keymap("n", "<Leader>Y", '"+Y', { noremap = true })
 	vim.api.nvim_set_keymap("n", "<Leader>P", '"+P', { noremap = true })
+
+	-- buffer management
+	vim.api.nvim_set_keymap("n", "<Leader>bd", ":bd<CR>", { noremap = true })
+	vim.api.nvim_set_keymap("n", "<Leader>bn", ":bn<CR>", { noremap = true })
+	vim.api.nvim_set_keymap("n", "<Leader>bp", ":bp<CR>", { noremap = true })
+	vim.api.nvim_set_keymap("n", "<Leader>bl", ":ls<CR>", { noremap = true })
+	-- buffer save
+	vim.api.nvim_set_keymap("n", "<Leader>w", ":w<CR>", { noremap = true })
+	-- buffer save all
+	vim.api.nvim_set_keymap("n", "<Leader>W", ":wa<CR>", { noremap = true })
+
 end
 
 local function set_custom_opt()
