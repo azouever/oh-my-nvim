@@ -37,6 +37,14 @@ local function set_keymap()
 	-- buffer save all
 	vim.api.nvim_set_keymap("n", "<Leader>W", ":wa<CR>", { noremap = true })
 
+    -- telescope setting
+    vim.api.nvim_set_keymap("n", "<Leader>ff", ":Telescope find_files<CR>", { noremap = true })
+    -- marks
+    vim.api.nvim_set_keymap("n", "<Leader>mm", ":Telescope marks<CR>", { noremap = true })
+    -- jumps
+    vim.api.nvim_set_keymap("n", "<Leader>jj", ":Telescope jumplist<CR>", { noremap = true })
+
+
 end
 
 local function set_custom_opt()
@@ -46,3 +54,4 @@ end
 
 set_keymap()
 set_custom_opt()
+
