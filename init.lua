@@ -5,7 +5,8 @@ require("basic")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
-		"git", "clone",
+		"git",
+		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
 		"--branch=stable", -- latest stable release
@@ -22,6 +23,8 @@ require("lazy").setup({
 		{ import = "plugins" },
 		{ import = "languages" },
 		{ import = "my_plugins" },
+		--{ import = "base" },
+		--{ import = "pde" },
 	},
 	ui = {
 		border = "rounded",
@@ -32,7 +35,6 @@ require("lazy").setup({
 	},
 })
 
-
 -- Final settings
 require("core")
 require("azou_custom_core")
@@ -42,13 +44,28 @@ pcall(require, "custom")
 -- from https://www.reddit.com/r/neovim/comments/suy5j7/highlight_yanked_text/
 -- :h vim.highlight.on_yank
 -- highlight yanked text for 200ms using the "Visual" highlight group
-vim.cmd[[
+vim.cmd([[
 augroup highlight_yank
 autocmd!
 au TextYankPost * silent! lua vim.highlight.on_yank({timeout=200})
 augroup END
-]]
-
+]])
 
 vim.cmd([[highlight Visual guifg=#000000 guibg=#FFFFFF gui=none]])
 
+--require "config.options"
+--require "config.lazy"
+
+--if vim.fn.argc(-1) == 0 then
+--  vim.api.nvim_create_autocmd("User", {
+--    group = vim.api.nvim_create_augroup("NeovimPDE", { clear = true }),
+--    pattern = "VeryLazy",
+--    callback = function()
+--      require "config.autocmds"
+--      require "config.keymaps"
+--    end,
+--  })
+--else
+--  require "config.autocmds"
+--  require "config.keymaps"
+--end
