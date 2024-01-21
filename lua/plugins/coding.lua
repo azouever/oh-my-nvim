@@ -30,9 +30,29 @@ return {
 	{ "hrsh7th/cmp-path" },
 	{ "hrsh7th/cmp-cmdline" },
 
-	{ "L3MON4D3/LuaSnip" }, -- install the LuaSnip engine
 
 	{ "onsails/lspkind.nvim" }, -- icons in autocomplete source
+
+	-- 代码片段
+	{
+		"rafamadriz/friendly-snippets",
+		lazy = true,
+	},
+	-- LuaSnip
+	{
+		"L3MON4D3/LuaSnip",
+		lazy = true,
+		dependencies = { "rafamadriz/friendly-snippets" },
+		build = "make install_jsregexp",
+		config = function()
+			require("plugins.luasnip.config")
+		end,
+	},
+	{
+		"saadparwaiz1/cmp_luasnip",
+		dependencies = { "L3MON4D3/LuaSnip" },
+		lazy = true,
+	},
 
 	-- todo comments
 	-- Preview
