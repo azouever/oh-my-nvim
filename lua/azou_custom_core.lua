@@ -21,7 +21,7 @@ local function set_keymap()
 	-- zen-mode
 	map("n", "<leader>z", ":ZenMode<CR>", option)
 
-	-- communicatek  with system clipboard
+	-- communicate  with system clipboard
 	vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true })
 	vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true })
 	vim.api.nvim_set_keymap("n", "<Leader>Y", '"+Y', { noremap = true })
@@ -37,14 +37,16 @@ local function set_keymap()
 	-- buffer save all
 	vim.api.nvim_set_keymap("n", "<Leader>W", ":wa<CR>", { noremap = true })
 
-    -- telescope setting
-    vim.api.nvim_set_keymap("n", "<Leader>ff", ":Telescope find_files<CR>", { noremap = true })
-    -- marks
-    vim.api.nvim_set_keymap("n", "<Leader>mm", ":Telescope marks<CR>", { noremap = true })
-    -- jumps
-    vim.api.nvim_set_keymap("n", "<Leader>jj", ":Telescope jumplist<CR>", { noremap = true })
-
-
+	-- telescope setting
+	vim.api.nvim_set_keymap("n", "<Leader>ff", ":Telescope find_files<CR>", { noremap = true })
+	-- marks
+	vim.api.nvim_set_keymap("n", "<Leader>mm", ":Telescope marks<CR>", { noremap = true })
+	-- jumps
+	vim.api.nvim_set_keymap("n", "<Leader>jj", ":Telescope jumplist<CR>", { noremap = true })
+	-- registers
+	vim.api.nvim_set_keymap("n", "<Leader>rr", ":Telescope registers<CR>", { noremap = true })
+	-- commands
+	vim.api.nvim_set_keymap("n", "<Leader>cc", ":Telescope commands<CR>", { noremap = true })
 end
 
 local function set_custom_opt()
@@ -54,4 +56,3 @@ end
 
 set_keymap()
 set_custom_opt()
-
