@@ -26,12 +26,16 @@ return {
 
 	-- View other usage of the plugin: https://github.com/akinsho/toggleterm.nvim
 	-- Use the shortcut to open or close the terminal.
-    terminal_float = "<C-t>", -- open terminal in a float window
+	terminal_float = "<C-t>", -- open terminal in a float window
 	terminal_bottom = "<C-n>", -- open terminal at the bottom
 
 	-- View other usage of the plugin: https://github.com/Shatur/neovim-session-manager
 	-- Use the shortcut to switch a session.
 	switch_session = "<leader>ss",
+	-- Use the shortcut to save a session.
+	save_current_session = "<leader>ws",
+	-- delete a session
+	delete_session = "<leader>ds",
 
 	-- View other usage of the plugin: https://github.com/nvim-telescope/telescope.nvim
 	-- Use the shortcut to find, search files and find buffers.

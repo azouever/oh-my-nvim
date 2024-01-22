@@ -315,7 +315,11 @@ _s_: Stop
 								cmd("w|lua require('neotest').run.run_last({strategy = 'dap'})"),
 								desc = "Debug Last",
 							},
-							{ "N", cmd("w|lua require('neotest').run.run({strategy = 'dap'})"), desc = "Debug Nearest" },
+							{
+								"N",
+								cmd("w|lua require('neotest').run.run({strategy = 'dap'})"),
+								desc = "Debug Nearest",
+							},
 							{ "S", cmd("w|lua require('neotest').summary.toggle()"), desc = "Summary" },
 							{ "a", cmd("w|lua require('neotest').run.attach()"), desc = "Attach" },
 							{

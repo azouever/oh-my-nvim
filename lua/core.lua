@@ -5,7 +5,7 @@ local opts = require("custom_opts")
 local function set_keymap()
 	local map = vim.keymap.set
 	local option = { noremap = true, silent = true }
-    map("n", keys.jump_left_window, "<C-W>h", option)
+	map("n", keys.jump_left_window, "<C-W>h", option)
 	map("n", keys.jump_down_window, "<C-W>j", option)
 	map("n", keys.jump_up_window, "<C-W>k", option)
 	map("n", keys.jump_right_window, "<C-W>l", option)
@@ -140,18 +140,18 @@ local function set_keymap()
 
 	-- Supported by nvim-session-manager
 	map("n", keys.switch_session, ":SessionManager load_session<CR>", option)
+	map("n", keys.save_current_session, ":SessionManager save_current_session<CR>", option)
+	map("n", keys.delete_session, ":SessionManager delete_session<CR>", option)
 end
 
-local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ direction = "float",cmd = "lazygit",size = 20, hidden = true })
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({ direction = "float", cmd = "lazygit", size = 20, hidden = true })
 
 function _lazygit_toggle()
-  lazygit:toggle()
+	lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", " g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-
-
+vim.api.nvim_set_keymap("n", " g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 
 -- Set up transparency
 local function set_transparency()
