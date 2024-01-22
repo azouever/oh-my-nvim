@@ -23,8 +23,8 @@ require("lazy").setup({
 		{ import = "plugins" },
 		{ import = "languages" },
 		{ import = "my_plugins" },
-		--{ import = "base" },
-		--{ import = "pde" },
+		{ import = "base" },
+		{ import = "pde" },
 	},
 	ui = {
 		border = "rounded",
