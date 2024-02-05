@@ -62,12 +62,12 @@ local function set_keymap()
 				term:change_dir(cwd)
 			end
 			-- when float term opened, disable bottom terminal
-			vim.api.nvim_del_keymap("t", keys.terminal_bottom)
+			-- vim.api.nvim_del_keymap("t", keys.terminal_bottom)
 			vim.cmd("startinsert!")
 		end,
 		on_close = function(t, job, exit_code, name)
 			-- when float term closed, enable bottom terminal
-			map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
+			-- map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
 		end,
 		on_exit = function(t, job, exit_code, name)
 			vim.cmd("quit!")
@@ -128,10 +128,10 @@ local function set_keymap()
 		bottom_terminal_default:toggle()
 	end
 
-	-- map("n", keys.terminal_float, ":lua _float_term_toggle()<CR>", option)
+	map("n", keys.terminal_float, ":lua _float_term_toggle()<CR>", option)
 	map("t", keys.terminal_float, "<C-\\><C-n>:lua _float_term_toggle()<CR>", option)
 	-- map("n", keys.terminal_bottom, ":lua _bottom_term_toggle()<CR>", option)
-	map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
+	-- map("t", keys.terminal_bottom, ":lua _bottom_term_toggle()<CR>", option)
 
 	vim.cmd([[
     command! Termfloat :lua _float_term_toggle()
