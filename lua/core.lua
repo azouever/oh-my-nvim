@@ -128,9 +128,9 @@ local function set_keymap()
 		bottom_terminal_default:toggle()
 	end
 
-	map("n", keys.terminal_float, ":lua _float_term_toggle()<CR>", option)
+	-- map("n", keys.terminal_float, ":lua _float_term_toggle()<CR>", option)
 	map("t", keys.terminal_float, "<C-\\><C-n>:lua _float_term_toggle()<CR>", option)
-	map("n", keys.terminal_bottom, ":lua _bottom_term_toggle()<CR>", option)
+	-- map("n", keys.terminal_bottom, ":lua _bottom_term_toggle()<CR>", option)
 	map("t", keys.terminal_bottom, "<C-\\><C-n>:lua _bottom_term_toggle()<CR>", option)
 
 	vim.cmd([[
