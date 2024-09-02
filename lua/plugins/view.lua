@@ -55,47 +55,47 @@ return {
     },
 
      -- Outline
-     {
-     	"stevearc/aerial.nvim",
-     	opts = {},
-     	-- Optional dependencies
-     	dependencies = {
-     		"nvim-treesitter/nvim-treesitter",
-     		"nvim-tree/nvim-web-devicons",
-     	},
-     	config = function()
-     		require("aerial").setup({
-     			lazy_load = false,
-     			open_automatic = require("custom_opts").auto_open_outline,
-     		})
-     	end,
-     },
+     -- {
+     -- 	"stevearc/aerial.nvim",
+     -- 	opts = {},
+     -- 	-- Optional dependencies
+     -- 	dependencies = {
+     -- 		"nvim-treesitter/nvim-treesitter",
+     -- 		"nvim-tree/nvim-web-devicons",
+     -- 	},
+     -- 	config = function()
+     -- 		require("aerial").setup({
+     -- 			lazy_load = false,
+     -- 			open_automatic = require("custom_opts").auto_open_outline,
+     -- 		})
+     -- 	end,
+     -- },
 
      -- Tab line
-     {
-     	"akinsho/bufferline.nvim",
-     	version = "v4.1.0",
-     	dependencies = "nvim-tree/nvim-web-devicons",
-     	config = function()
-     		require("plugins/bufferline/config")()
-     	end,
-     },
+     -- {
+     -- 	"akinsho/bufferline.nvim",
+     -- 	version = "v4.1.0",
+     -- 	dependencies = "nvim-tree/nvim-web-devicons",
+     -- 	config = function()
+     -- 		require("plugins/bufferline/config")()
+     -- 	end,
+     -- },
 
      -- cmd line
-     {
-     	"folke/noice.nvim",
-     	dependencies = {
-     		"MunifTanjim/nui.nvim",
-     		"rcarriga/nvim-notify",
-     	},
-     	config = function()
-     		require("plugins/noice/config")()
-     	end,
-     },
+     -- {
+     -- 	"folke/noice.nvim",
+     -- 	dependencies = {
+     -- 		"MunifTanjim/nui.nvim",
+     -- 		"rcarriga/nvim-notify",
+     -- 	},
+     -- 	config = function()
+     -- 		require("plugins/noice/config")()
+     -- 	end,
+     -- },
 
      -- Improve the ui
-     {
-     	"stevearc/dressing.nvim",
-     	opts = {},
-     },
+     -- {
+     -- 	"stevearc/dressing.nvim",
+     -- 	opts = {},
+     -- },
 }
