@@ -54,7 +54,9 @@ augroup END
 
 vim.cmd([[highlight Visual guifg=#000000 guibg=#FFFFFF gui=none]])
 
---require "config.options"
+require "config.options"
+require "config.match_out_file"
+require "config.autocmds"
 --require "config.lazy"
 
 --if vim.fn.argc(-1) == 0 then
