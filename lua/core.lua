@@ -163,8 +163,8 @@ local function set_transparency()
 end
 
 -- Set up auto command
--- local function set_autocmd() end
+local function set_autocmd() end
 
--- set_keymap()
--- set_transparency()
--- set_autocmd()
+set_keymap()
+set_transparency()
+set_autocmd()
