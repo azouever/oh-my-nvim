@@ -50,8 +50,8 @@ opt.undofile = true
 opt.updatetime = 200
 opt.wildmode = "longest:full,full"
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.mapleader = ";"
+vim.g.maplocalleader = ";"
 
 vim.g.markdown_recommended_style = 0
 

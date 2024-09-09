@@ -38,3 +38,8 @@ vim.cmd([[
     command! -nargs=+ ExtractMatches lua require('base.match_out_file').extract_matches_to_file(<q-args>)
 ]])
 
+
+vim.cmd([[
+  command! SaveAndQuit execute 'SessionSave' | qa
+]])
+

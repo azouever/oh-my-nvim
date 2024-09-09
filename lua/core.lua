@@ -139,9 +139,9 @@ local function set_keymap()
     vim.cmd([[cnoreabbrev terminal Termfloat]])
 
     -- Supported by nvim-session-manager
-    map("n", keys.switch_session, ":SessionManager load_session<CR>", option)
-    map("n", keys.save_current_session, ":SessionManager save_current_session<CR>", option)
-    map("n", keys.delete_session, ":SessionManager delete_session<CR>", option)
+    -- map("n", keys.switch_session, ":SessionManager load_session<CR>", option)
+    -- map("n", keys.save_current_session, ":SessionManager save_current_session<CR>", option)
+    -- map("n", keys.delete_session, ":SessionManager delete_session<CR>", option)
 end
 
 local Terminal = require("toggleterm.terminal").Terminal

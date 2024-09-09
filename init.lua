@@ -1,4 +1,7 @@
 -- Basic settings
+vim.g.maplocalleader = ";"
+vim.g.mapleader = ";"
+
 require("basic")
 
 -- Load plugins
@@ -17,7 +20,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = require("custom_keys").leader
-vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
     spec = {
