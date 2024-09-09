@@ -40,6 +40,6 @@ vim.cmd([[
 
 
 vim.cmd([[
-  command! SaveAndQuit execute 'SessionSave' | qa
+  command! SaveAndQuit execute 'SessionSave' | wqall
 ]])
 
