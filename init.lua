@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",  -- latest stable release
+        "--branch=stable", -- latest stable release
         lazypath,
     })
 end
@@ -53,6 +53,7 @@ autocmd!
 au TextYankPost * silent! lua vim.highlight.on_yank({timeout=200})
 augroup END
 ]])
+
 
 vim.cmd([[highlight Visual guifg=#000000 guibg=#FFFFFF gui=none]])
 
