@@ -145,6 +145,8 @@ local function set_keymap()
 
 	map("n", keys.copy_all, "ggVGy", option)
 	map("n", keys.replace_all, "ggVGpgg", option)
+
+	map("n", "<leader>mt", ":RenderMarkdown toggle<CR>", option)
 end
 
 local Terminal = require("toggleterm.terminal").Terminal
