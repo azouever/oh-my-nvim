@@ -6,7 +6,7 @@ return {
 		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
 		opts = {
 			-- Whether Markdown should be rendered by default or not
-			enabled = true,
+			enabled = false,
 			-- Maximum file size (in MB) that this plugin will attempt to render
 			-- Any file larger than this will effectively be ignored
 			max_file_size = 10.0,
