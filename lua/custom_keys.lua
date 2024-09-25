@@ -70,4 +70,6 @@ return {
     lsp_rename = "<leader>re",
     -- Use the shortcut to format your codes.
     format = "==",
+    copy_all = "<leader>ca",
+    replace_all = "<leader>ra",
 }
