@@ -41,3 +41,29 @@ vim.cmd([[
 vim.cmd([[
   command! SaveAndQuit execute 'SessionSave' | wqall
 ]])
+
+--command! CopyBuffer let @+ = expand('%:p') <Leader>cfp
+
+vim.cmd([[
+  command! CopyBufferFullPath
+    \ let full_path = expand('%:p') |
+    \ let vault_name = 'obsidian-default-vault' |
+    \ let file_path = substitute(full_path, '/Users/xukaixuan/obsidian/' . vault_name . '/', '', '') |
+    \ let obsidian_path = 'obsidian://open?vault=' . vault_name . '&file=' . file_path |
+    \ let @+ = obsidian_path |
+    \ echo 'Copied ' . obsidian_path
+]])
+
+vim.cmd([[
+  command! OpenInObsidian
+    \ let full_path = expand('%:p') |
+    \ let parts = split(full_path, '/') |
+    \ let vault_name = parts[3] |
+    \ let file_path = join(parts[4:], '/') |
+    \ let obsidian_path = 'obsidian://open?vault=' . vault_name . '&file=' . file_path |
+    \ let command = 'open ' . shellescape(obsidian_path) |
+    \ call system(command) |
+    \ echo 'Opened ' . obsidian_path
+]])
+
+

@@ -61,3 +61,4 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
     vim.cmd "set formatoptions-=cro"
   end,
 })
+
