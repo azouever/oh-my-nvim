@@ -47,11 +47,8 @@ vim.cmd([[
 vim.cmd([[
   command! CopyBufferFullPath
     \ let full_path = expand('%:p') |
-    \ let vault_name = 'obsidian-default-vault' |
-    \ let file_path = substitute(full_path, '/Users/xukaixuan/obsidian/' . vault_name . '/', '', '') |
-    \ let obsidian_path = 'obsidian://open?vault=' . vault_name . '&file=' . file_path |
-    \ let @+ = obsidian_path |
-    \ echo 'Copied ' . obsidian_path
+    \ let @+ = full_path |
+    \ echo 'Copied ' . full_path
 ]])
 
 vim.cmd([[

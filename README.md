@@ -1,3 +1,17 @@
+# Introduction
+
+this repository is a fork of hardhackerlabs/oh-my-nvim, and it is a personal configuration of neovim.
+
+# Details
+
+1. use lazy.nvim to manage plugins, and you can learn more about from it's site or github, such as how to install plugins, how to configure plugins, etc
+2. use auto-session to manage sessions
+3. use github copilot to accelerate coding and writing, write anything you want.
+4. can preview markdown file in obsidian(in a obsidian vault), detail: ./lua/config/custom_cmd.lua
+5. copy all(current file),replace all(current file),detail: ./lua/config/custom_cmd.lua
+
+--- 
+
 <p align="center">
   <img width="180" src="https://github.com/hardhackerlabs/themes/raw/master/media/logo/logo.png" alt="HardHacker">
 </p>
