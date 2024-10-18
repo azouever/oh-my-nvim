@@ -149,6 +149,8 @@ local function set_keymap()
   map("n", "<leader>mt", ":RenderMarkdown toggle<CR>", option)
   map("n", "<leader>cfp", ":CopyBufferFullPath<CR>", option)
   map("n", "<leader>pio", ":OpenInObsidian<CR>", option)
+
+  map("n", "<leader>ww", ":w<CR>", option)
 end
 
 local Terminal = require("toggleterm.terminal").Terminal
