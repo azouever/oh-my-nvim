@@ -38,6 +38,25 @@ return {
 	--     telescope.load_extension "fzf"
 	--   end,
 	-- },
+	{
+		"folke/which-key.nvim",
+    event = "VeryLazy",
+    enabled = false,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
 	-- {
 	-- 	"folke/which-key.nvim",
 	-- 	event = "VeryLazy",
@@ -55,7 +74,7 @@ return {
 	-- 				winblend = 0,
 	-- 			},
 	-- 			layout = {
-	-- 				height = { min = 4, max = 25 }, -- min and max height of the columns
+	-- 				height = { min = 4, max = 25 }, -- min andkmax height of the columns
 	-- 				width = { min = 20, max = 50 }, -- min and max width of the columns
 	-- 				spacing = 3, -- spacing between columns
 	-- 				align = "left", -- align columns left, center or right
