@@ -14,6 +14,24 @@ return {
       })
     end,
   },
+  {
+    "williamboman/mason-nvim-dap.nvim",
+    enabled = true,
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+      "jay-babu/mason-nvim-dap.nvim",
+    },
+    config = function()
+      require("mason-nvim-dap").setup({
+        ensure_installed = {
+          "codelldb",
+          "javatest",
+          "javadbg",
+        },
+      })
+    end,
+  },
 
   {
     "williamboman/mason-lspconfig.nvim",
