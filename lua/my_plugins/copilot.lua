@@ -2,7 +2,7 @@ return {
   {
     "github/copilot.vim",
     lazy = false,
-    enabled = false,
+    enabled = true,
     config = function()
       -- Mapping tab is already used by NvChad
       -- vim.g.copilot_no_tab_map = true
