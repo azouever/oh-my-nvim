@@ -14,6 +14,7 @@ return {
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
+    enabled = false,
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "saadparwaiz1/cmp_luasnip",

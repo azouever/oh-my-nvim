@@ -1,6 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
+    enabled = false,
     config = function()
       require("mason").setup({
         ui = {
@@ -16,7 +17,7 @@ return {
   },
   {
     "williamboman/mason-nvim-dap.nvim",
-    enabled = true,
+    enabled = false,
     dependencies = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",
@@ -35,6 +36,7 @@ return {
 
   {
     "williamboman/mason-lspconfig.nvim",
+    enabled = false,
     config = function()
       require("mason-lspconfig").setup()
       require("mason-lspconfig").setup_handlers({
@@ -55,6 +57,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    enabled = false,
     config = function()
       require("plugins/lspconfig/config")()
     end,
@@ -62,6 +65,7 @@ return {
 
   {
     "nvimtools/none-ls.nvim",
+    enabled = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       local null_ls = require("null-ls")
@@ -104,6 +108,7 @@ return {
 
   {
     "jay-babu/mason-null-ls.nvim",
+    enabled = false,
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "williamboman/mason.nvim",
