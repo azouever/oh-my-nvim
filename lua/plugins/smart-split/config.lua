@@ -6,6 +6,7 @@ return function()
             'prompt',
             'neo-tree',
         },
+        default_amount = 10,
         ignored_buftypes = { 'NvimTree', 'neo-tree' },
     })
 

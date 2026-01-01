@@ -21,6 +21,13 @@ local function set_keymap()
 	-- zen-mode
 	map("n", "<leader>z", ":ZenMode<CR>", option)
 
+
+  -- 左右快速移动（按 10 个字符）
+  map("n", "<S-Left>", "20zh", option)
+  map("n", "<S-Right>", "20zl", option)
+
+
+
 	-- communicate  with system clipboard
 	vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true })
 	vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true })

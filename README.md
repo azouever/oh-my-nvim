@@ -2,6 +2,8 @@
 
 this repository is a fork of hardhackerlabs/oh-my-nvim, and it is a personal configuration of neovim.
 
+> 🇨🇳 中文使用文档请见：`docs/usage-zh.md`
+
 # Details
 
 1. use lazy.nvim to manage plugins, and you can learn more about from it's site or github, such as how to install plugins, how to configure plugins, etc

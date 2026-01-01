@@ -1,4 +1,3 @@
--- 提取匹配的内容到文件
 local function extract_matches_to_file(args)
 	-- 将传入的参数字符串拆分成模式和文件名
 	local pattern, filename = args:match("(%S+)%s+(%S+)")
@@ -35,7 +34,7 @@ end
 
 -- 注册命令
 vim.cmd([[
-    command! -nargs=+ ExtractMatches lua require('base.match_out_file').extract_matches_to_file(<q-args>)
+    command! -nargs=+ ExtractMatches lua require('config.custom_cmd').extract_matches_to_file(<q-args>)
 ]])
 
 vim.cmd([[
@@ -62,5 +61,9 @@ vim.cmd([[
     \ call system(command) |
     \ echo 'Opened ' . obsidian_path
 ]])
+
+return {
+	extract_matches_to_file = extract_matches_to_file,
+}
 
 
