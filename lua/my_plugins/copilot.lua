@@ -1,4 +1,7 @@
+-- my_plugins.copilot
+-- 职责：统一管理 Copilot 系列插件（vim 版 / lua 版 / CopilotChat）的启用与基础配置
 return {
+  -- 官方 Copilot.vim 插件：通过云端 AI 自动补全代码（当前启用）
   {
     "github/copilot.vim",
     lazy = false,
@@ -12,7 +15,7 @@ return {
     end,
   },
 
-  -- zbirenbaum/copilot.lua
+  -- Lua 版 Copilot 客户端（更细粒度配置），当前未启用
   {
     "zbirenbaum/copilot.lua",
     lazy = true,
@@ -66,27 +69,29 @@ return {
     },
   },
 
+  -- CopilotChat：在 Neovim 内与 Copilot 进行对话/解释代码，当前未启用
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    enabled = false,
     opts = {
-      show_help = "yes",      -- Show help text for CopilotChatInPlace, default: yes
-      debug = false,          -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+      show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
+      debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
       disable_extra_info = "no", -- Disable extra information (e.g: system prompt) in the response.
-      language = "Chinese",   -- Copilot answer language settings when using default prompts. Default language is English.
+      language = "Chinese", -- Copilot answer language settings when using default prompts. Default language is English.
       -- proxy = "socks5://127.0.0.1:3000", -- Proxies requests via https or socks.
       -- temperature = 0.1,
       window = {
         layout = "vertical", -- 'vertical', 'horizontal', 'float', 'replace'
-        width = 0.25,       -- fractional width of parent, or absolute width in columns when > 1
-        height = 0.5,       -- fractional height of parent, or absolute height in rows when > 1
+        width = 0.25, -- fractional width of parent, or absolute width in columns when > 1
+        height = 0.5, -- fractional height of parent, or absolute height in rows when > 1
         -- Options below only apply to floating windows
         relative = "editor", -- 'editor', 'win', 'cursor', 'mouse'
-        border = "single",  -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
-        row = nil,          -- row position of the window, default is centered
-        col = nil,          -- column position of the window, default is centered
+        border = "single", -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
+        row = nil, -- row position of the window, default is centered
+        col = nil, -- column position of the window, default is centered
         title = "Copilot Chat", -- title of chat window
-        footer = nil,       -- footer of chat window
-        zindex = 1,         -- determines if window is on top or below other floating windows
+        footer = nil, -- footer of chat window
+        zindex = 1, -- determines if window is on top or below other floating windows
       },
     },
     build = function()
@@ -106,7 +111,7 @@ return {
         mode = { "n" },
         desc = "Toggle Copilot Chat",
       },
-      { "<leader>ccb", ":CopilotChatBuffer ",       desc = "CopilotChat - Chat with current buffer" },
+      { "<leader>ccb", ":CopilotChatBuffer ", desc = "CopilotChat - Chat with current buffer" },
       {
         "<leader>cce",
         "<cmd>CopilotChatExplain<cr>",

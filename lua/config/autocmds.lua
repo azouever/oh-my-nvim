@@ -1,19 +1,22 @@
+-- 通用自动命令配置
+-- 职责：集中管理高频通用自动命令（yank 高亮、恢复光标位置、q 关闭等）
 local function augroup(name)
   return vim.api.nvim_create_augroup("nde_" .. name, { clear = true })
 end
 
--- See `:help vim.highlight.on_yank()`
+-- 拷贝后短暂高亮，便于确认 yank 范围
+-- 详见 `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
   end,
-  group = augroup "highlight_yank",
+  group = augroup("highlight_yank"),
   pattern = "*",
 })
 
--- Go to last loction when opening a buffer
+-- 打开缓冲区时自动跳转到上次关闭时的光标位置
 vim.api.nvim_create_autocmd("BufReadPost", {
-  group = augroup "last_loc",
+  group = augroup("last_loc"),
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
     local lcount = vim.api.nvim_buf_line_count(0)
@@ -23,9 +26,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
--- windows to close
+-- 某些“只读窗口”统一用 q 关闭，并从 buffer 列表中隐藏
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup "close_with_q",
+  group = augroup("close_with_q"),
   pattern = {
     "OverseerForm",
     "OverseerList",
@@ -56,9 +59,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  group = augroup "auto_format_options",
+  group = augroup("auto_format_options"),
   callback = function()
-    vim.cmd "set formatoptions-=cro"
+    vim.cmd("set formatoptions-=cro")
   end,
 })
-

@@ -1,3 +1,5 @@
+-- LuaSnip 行为配置
+-- 职责：设置 LuaSnip 的全局行为（历史、事件、虚拟文本样式等），与具体片段内容解耦
 local ls = require("luasnip")
 
 local s = ls.snippet

@@ -1,3 +1,5 @@
+-- 基础编辑选项配置
+-- 职责：集中管理 Neovim 的常用编辑行为（缩进、折叠、UI、性能相关等）
 local opt = vim.opt
 
 opt.autoindent = true
@@ -32,7 +34,7 @@ opt.scrolloff = 8
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 opt.shiftround = true
 opt.shiftwidth = 2
-opt.shortmess:append { W = true, I = true, c = true, C = true }
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showcmd = false
 opt.showmode = false
 opt.sidescrolloff = 8
@@ -50,9 +52,11 @@ opt.undofile = true
 opt.updatetime = 200
 opt.wildmode = "longest:full,full"
 
+-- 全局 leader 与本地 leader
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
 vim.g.markdown_recommended_style = 0
 
+-- 空格键在普通/可视模式下不再触发默认行为
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })

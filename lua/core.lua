@@ -1,7 +1,13 @@
+-- 核心通用配置
+-- 1. 设置全局快捷键（窗口切换 / 终端 / 文件树等）
+-- 2. 配置浮动 / 底部终端行为
+-- 3. 统一窗口与弹出菜单透明度
+
 local keys = require("custom_keys")
 local opts = require("custom_opts")
 
--- Setup keymapping
+-- 设置全局快捷键映射
+-- 职责：只做映射，不涉及具体业务逻辑
 local function set_keymap()
   local map = vim.keymap.set
   local option = { noremap = true, silent = true }
@@ -88,34 +94,10 @@ local function set_keymap()
 
       -- set keymapping
       local opts = { buffer = 0 }
-      vim.api.nvim_buf_set_keymap(
-        term.bufnr,
-        "t",
-        "<C-h>",
-        [[<Cmd>wincmd h<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_buf_set_keymap(
-        term.bufnr,
-        "t",
-        "<C-j>",
-        [[<Cmd>wincmd j<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_buf_set_keymap(
-        term.bufnr,
-        "t",
-        "<C-k>",
-        [[<Cmd>wincmd k<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_buf_set_keymap(
-        term.bufnr,
-        "t",
-        "<C-l>",
-        [[<Cmd>wincmd l<CR>]],
-        { noremap = true, silent = true }
-      )
+      vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-h>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-l>", [[<Cmd>wincmd l<CR>]], { noremap = true, silent = true })
       vim.cmd("startinsert!")
     end,
     on_exit = function(t, job, exit_code, name)
@@ -160,7 +142,7 @@ end
 
 vim.api.nvim_set_keymap("n", " g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 
--- Set up transparency
+-- 设置窗口与弹出菜单透明度
 local function set_transparency()
   local transparency = opts.window_transparency
   -- Setup global transparency for float window.
@@ -169,7 +151,7 @@ local function set_transparency()
   vim.o.pumblend = transparency
 end
 
--- Set up auto command
+-- 预留自动命令配置入口，后续有需要可以在此集中管理
 local function set_autocmd() end
 
 set_keymap()

@@ -1,3 +1,5 @@
+-- plugins.coding
+-- 职责：与编码相关的通用插件（补全、片段等），按需启用/关闭
 return {
   -- auto-tag
   -- {
@@ -24,12 +26,13 @@ return {
   -- { "hrsh7th/cmp-cmdline" },
 
   -- { "onsails/lspkind.nvim" }, -- icons in autocomplete source
+  -- 通用代码片段集合（多语言 snippets，供 LuaSnip 等使用）
   {
     "rafamadriz/friendly-snippets",
     lazy = true,
   },
 
-  -- LuaSnip
+  -- 片段引擎 LuaSnip，配合补全/快捷插入代码片段
   {
     "L3MON4D3/LuaSnip",
     lazy = true,

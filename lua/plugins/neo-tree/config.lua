@@ -1,12 +1,14 @@
+-- neo-tree 文件树配置
+-- 职责：统一管理文件树外观、行为与快捷键（左侧栏 / 浮动 Git 状态等）
 return function()
   -- Unless you are still migrating, remove the deprecated commands from v1.x
   vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
   -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-  vim.fn.sign_define("DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
-  vim.fn.sign_define("DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
-  vim.fn.sign_define("DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
-  vim.fn.sign_define("DiagnosticSignHint", {text = " ", texthl = "DiagnosticSignHint"})
+  vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+  vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+  vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+  vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
 
   require("neo-tree").setup({
     close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
@@ -15,7 +17,7 @@ return function()
     enable_diagnostics = true,
     open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
     sort_case_insensitive = false, -- used when sorting files and directories in the tree
-    sort_function = nil , -- use a custom function for sorting files and directories in the tree 
+    sort_function = nil, -- use a custom function for sorting files and directories in the tree
     -- sort_function = function (a,b)
     --       if a.type == b.type then
     --           return a.path > b.path
@@ -37,7 +39,7 @@ return function()
 
     default_component_configs = {
       container = {
-        enable_character_fade = true
+        enable_character_fade = true,
       },
       icon = {
         folder_closed = "",
@@ -58,16 +60,16 @@ return function()
       },
       git_status = {
         symbols = {
-          added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-          modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-          deleted   = "✖",-- this can only be used in the git_status source
+          added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+          modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+          deleted = "✖", -- this can only be used in the git_status source
           untracked = "",
-          ignored   = "",
-          staged    = "",
-          conflict  = "",
-          renamed   = "󰁕",
-          unstaged  = "󰄱",
-        }
+          ignored = "",
+          staged = "",
+          conflict = "",
+          renamed = "󰁕",
+          unstaged = "󰄱",
+        },
       },
     },
 
@@ -81,9 +83,9 @@ return function()
       auto_expand_width = true, -- expand the window when file exceeds the window width. does not work with position = "float"
 
       mappings = {
-        ["<space>"] = { 
-          "toggle_node", 
-          nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
+        ["<space>"] = {
+          "toggle_node",
+          nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
         },
         ["<2-LeftMouse>"] = "open",
         ["<cr>"] = "open",
@@ -97,11 +99,11 @@ return function()
         ["w"] = "open_with_window_picker",
         ["C"] = "close_node",
         ["z"] = "close_all_nodes",
-        ["a"] = { 
+        ["a"] = {
           "add",
           config = {
-            show_path = "none" -- "none", "relative", "absolute"
-          }
+            show_path = "none", -- "none", "relative", "absolute"
+          },
         },
         ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
         ["d"] = "delete",
@@ -117,7 +119,7 @@ return function()
         ["?"] = "show_help",
         ["<"] = "prev_source",
         [">"] = "next_source",
-      }
+      },
     },
 
     filesystem = {
@@ -176,7 +178,7 @@ return function()
         },
       },
 
-      commands = {} -- Add a custom command or override a global one using the same function name
+      commands = {}, -- Add a custom command or override a global one using the same function name
     },
 
     buffers = {
@@ -189,7 +191,7 @@ return function()
           ["bd"] = "buffer_delete",
           ["<bs>"] = "navigate_up",
           ["."] = "set_root",
-        }
+        },
       },
     },
 
@@ -197,15 +199,15 @@ return function()
       window = {
         position = "float",
         mappings = {
-          ["A"]  = "git_add_all",
+          ["A"] = "git_add_all",
           ["gu"] = "git_unstage_file",
           ["ga"] = "git_add_file",
           ["gr"] = "git_revert_file",
           ["gc"] = "git_commit",
           ["gp"] = "git_push",
           ["gg"] = "git_commit_and_push",
-        }
-      }
+        },
+      },
     },
   })
 end

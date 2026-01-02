@@ -1,3 +1,5 @@
+-- base.coding
+-- 职责：与“编码体验”相关的基础插件（补全 / 片段等）的 lazy.nvim 配置
 return {
 
   -- 		"kylechui/nvim-surround",
@@ -20,7 +22,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
-      "L3MON4D3/LuaSnip"
+      "L3MON4D3/LuaSnip",
     },
     opts = function()
       local cmp = require("cmp")
@@ -40,8 +42,7 @@ return {
       }
       local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0
-            and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
 
       return {
@@ -112,9 +113,9 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp", group_index = 1 },
-          { name = "luasnip",  group_index = 1 },
-          { name = "buffer",   group_index = 2 },
-          { name = "path",     group_index = 2 },
+          { name = "luasnip", group_index = 1 },
+          { name = "buffer", group_index = 2 },
+          { name = "path", group_index = 2 },
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },

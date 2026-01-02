@@ -1,10 +1,12 @@
+-- bufferline 插件配置
+-- 职责：控制标签（buffer）显示样式、诊断信息与与 Neo-tree 偏移等
 return function()
   local bufferline = require("bufferline")
   bufferline.setup({
     options = {
-      mode = "buffers",                            -- set to "tabs" to only show tabpages instead
+      mode = "buffers", -- set to "tabs" to only show tabpages instead
       style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
-      themable = true,                             -- allows highlight groups to be overriden i.e. sets highlights as default
+      themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
       --numbers = function(opts)
       --	return string.format("%s·%s", opts.raise(opts.id), opts.lower(opts.ordinal))
       --end,

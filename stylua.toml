@@ -1,0 +1,12 @@
+indent_type = "Spaces"
+indent_width = 2
+
+# 保持与当前仓库一致的常用宽度，避免过度换行
+column_width = 120
+
+# 使用 Lua 社区常用的双引号风格（自动，但更偏向双引号）
+quote_style = "AutoPreferDouble"
+
+# 函数调用保持显式括号，风格更稳定
+call_parentheses = "Always"
+
