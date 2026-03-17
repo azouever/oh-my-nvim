@@ -1,29 +1,15 @@
--- base 模块入口
--- 职责：聚合基础类插件配置，方便 lazy.nvim 通过 `{ import = \"base\" }` 一次性加载
+-- base.init
+-- 职责：基础插件入口（Treesitter, UI, Editor 等）
 return {
-  -- 	{ "tpope/vim-sleuth", event = "VeryLazy" },
-  -- { "tpope/vim-repeat", event = "VeryLazy" },
-  -- { "nvim-lua/plenary.nvim" },
-  -- {
-  --   "tpope/vim-fugitive",
-  --   cmd = { "Git", "GBrowse", "Gdiffsplit", "Gvdiffsplit" },
-  --   dependencies = {
-  --     "tpope/vim-rhubarb",
-  --   },
-  --   -- stylua: ignore
-  --   keys = {
-  --     { "<leader>gs", "<cmd>Git<cr>", desc = "Status" },
-  --   },
-  -- },
-  -- {
-  -- 	"folke/persistence.nvim",
-  -- 	event = "BufReadPre",
-  -- 	opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help" } },
-  -- 	-- stylua: ignore
-  -- 	keys = {
-  -- 		{ "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
-  -- 		{ "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
-  -- 		{ "<leader>qd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
-  -- 	},
-  -- }
+  -- Treesitter: 语法高亮、textobjects、增量选择
+  { import = "base.treesitter" },
+
+  -- UI: 状态栏、文件树、标签栏等
+  { import = "base.ui" },
+
+  -- Editor: 编辑增强
+  { import = "base.editor" },
+
+  -- Coding: 代码片段
+  { import = "base.coding" },
 }

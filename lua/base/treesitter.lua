@@ -7,7 +7,6 @@ return {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
     build = ":TSUpdate",
-    enabled = false,
     event = { "BufReadPost", "BufNewFile" },
     opts = {
       sync_install = false,
