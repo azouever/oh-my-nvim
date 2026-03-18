@@ -19,7 +19,7 @@ return {
         "org",
         "query",
         "regex",
-        "latex",
+        -- "latex",  -- 暂时注释掉，需要 tree-sitter CLI 生成语法
         "vim",
         "vimdoc",
         "yaml",
