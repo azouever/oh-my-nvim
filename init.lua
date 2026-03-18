@@ -6,9 +6,6 @@
 
 -- Basic settings
 vim.g.maplocalleader = ";"
-vim.g.mapleader = ";"
-
-require("basic")
 
 -- Load plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
